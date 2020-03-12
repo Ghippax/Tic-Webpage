@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- codigo en css para decorar la página -->
+    <style>
+      /* Esta parte resetea los parametros default de la página*/
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed,
+      figure, figcaption, footer, header, hgroup,
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure,
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      blockquote, q {
+        quotes: none;
+      }
+      blockquote:before, blockquote:after,
+      q:before, q:after {
+        content: '';
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      a {
+        color: #c8f5b5;
+        text-decoration:none;
+      }
+      a:hover {
+        color:#4ebcff;
+      }
+      /*A partir de aquí empiezo a decorar la página con diferentes colores y letras*/
+      html {
+        font-family: "Open Sans", Arial;
+        font-size: 20px;
+        background-color: #E1E2E1;
+      }
+      .header {
+        background-color: #0BAA2A;
+        font-size: 80px;
+        font-weight: 700;
+        color: white;
+        padding: 20px 30px;
+        margin-top: 40px;
+      }
+      .content {
+        margin-right: 25%;
+      }
+      .content iframe {
+        padding-left: 30px;
+        padding-bottom: 15px;
+        width: 100%;
+      }
+      .videoBox{
+        position: relative;
+        padding-top: 56.25%;
+      }
+      iframe[frameborder="0"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      h2 {
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(26,121,9,1) 0%, rgba(11,170,42,1) 48%, rgba(146,182,156,1) 76%, rgba(225,226,225,1) 96%);
+        color: white;
+        font-weight: 600;
+        padding: 5px 30px;
+      }    
+      p {
+        padding: 5px 30px;
+        line-height: 28px;
+        padding-bottom: 10px;
+      }
+      .content ul {
+        padding: 5px 50px;
+        line-height: 28px;
+      }
+      .content li {
+        padding-bottom: 10px;
+      }
+      img {
+        padding: 10px 30px 20px;
+        width: 100%;
+        height: 56%;
+      }
+      #im {
+        padding-left: 0px;
+      }
+      .bot {
+        background-color: #0BAA2A;
+        padding: 20px 30px;
+        color: white;
+      }
+      .bot h3 {
+        padding-right: 20px;
+        display:inline;
+      }
+      .leftBar{
+        display:inline-block;
+        position: absolute;
+        top: 180px;
+        right: 0px;
+        padding: 0px 10px;
+        width: 16.5%;
+      }
+      .leftBar h3{
+        margin-top: 10px;
+        padding: 10px 10px;
+        color: white;
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(26,121,9,1) 0%, rgba(11,170,42,1) 68%, rgba(146,182,156,1) 80%, rgba(225,226,225,1) 98%);
+      }
+      .leftBar h2 {
+        padding: 10px;
+        text-align: center;
+        margin-top: 10px;
+        background: rgba(26,121,9,1);
+      }
+      .song {
+        text-align: center;
+        font-style: italic;
+      }
+      .nav ul {
+        background-color: #0BAA2A;
+        position: fixed;
+        z-index: 100;
+        top: 0px;
+        width: 100%;
+      }
+      .nav li {
+        color: white;
+        display: inline-block;
+        padding: 10px 30px;
+      }
+      .nav li:hover{
+        background-color: rgba(26,121,9,1);
+      }
+      .nav a{
+        color:white;
+      }
+      .nav a:hover{
+        color:white;
+      }
+      #back {
+        position: fixed;
+        right: 10px;
+        bottom: 20px;
+        background: white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        z-index: 101;
+      }
+      #back img{
+        padding: 0px 0px;
+        width: 60px;
+        height: 60px;
+      }
+    </style>
+    <title>Minecraft Info</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <a id="back" href="#hd"><img src="https://1.bp.blogspot.com/-038JfTHROvg/XmP8R-DHI_I/AAAAAAAADMg/6QSO6uXl3qUoEZBaAk1iuGoRPOTwwHSWACLcBGAsYHQ/s1600/icon-arrow-down.png"></a>
+    <!-- Esta parte es la barra de navegación -->
+    <div class="nav">
+      <ul>
+        <li><a href="#inf">Información</a></li>
+        <li><a href="#jug">Jugabilidad</a></li>
+        <li><a href="#con">Consejos</a></li>
+        <li><a href="#can">Canales recomendados</a></li>
+      </ul>
+    </div>
+    <!-- Esta parte es para el título-->
+    <div id="hd" class="header">
+      <h1>Minecraft</h1>
+    </div>
+    <!-- Aquí están los apartados y la información en cada uno-->
+    <div class="content">
+      <h2 id="inf">Información</h2>
+      <p><b>Minecraft</b> es un videojuego de construcción, de tipo <i>"mundo abierto"</i> o sandbox creado originalmente por el sueco Markus Persson (conocido comúnmente como "Notch"),
+       y posteriormente desarrollado por su empresa, <b>Mojang AB</b>. Fue lanzado públicamente el 17 de mayo de 2009, después de diversos cambios fue lanzada su versión completa el 18 de noviembre de 2011.</p>
+      <img src="https://as.com/meristation/imagenes/2019/09/17/noticias/1568726251_119275_1568726312_noticia_normal.jpg">
+      <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/140308117&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+      <h2 id="jug">Jugabilidad</h2>
+      <p><b>Minecraft</b> es un juego de mundo abierto, por lo que no posee un objetivo específico, permitiéndole al jugador una gran libertad en cuanto a la elección de su forma
+      de jugar. A pesar de ello, el juego posee un sistema de logros. </p>
+      <img src="https://i.ytimg.com/vi/4YcDzLTKVus/maxresdefault.jpg">
+      <p>El modo de juego predeterminado es en primera persona, aunque los jugadores tienen la posibilidad de cambiarlo a tercera persona. El juego se centra en la
+      colocación y destrucción de bloques, siendo que este se compone de objetos tridimensionales cúbicos, colocados sobre un patrón de rejilla fija. Estos cubos o bloques
+      representan principalmente distintos elementos de la naturaleza, <u>como tierra, piedra, minerales, troncos, entre otros</u>. Los jugadores son libres de desplazarse
+      por su entorno y modificarlo mediante la creación, recolección y transporte de los bloques que componen al juego, los cuales solo pueden ser colocados
+      respetando la rejilla fija del juego.</p>
+      <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/140308107&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+      <h2 id="con">Consejos</h2>
+      <ul>
+        <li>Puedes trasplantar árboles: después de haber cortado el tronco, destruye el follaje y podrás recuperar retoños que puedes trasplantar. Los árboles crecen
+        bastante rápido (en general en un día). Es práctico para tener un recurso de bosque inagotable.</li>
+        <li>Para cortar el follaje de los árboles es inútil usar el hacha, utiliza sólo los retoños de árbol.</li>
+        <li>Para plantar grandes árboles, comienza por cavar un hoyo de dos bloques de profundidad, luego deposita el retoño dentro. El árbol será mucho más grande.</li>
+        <li>Es posible cultivar árboles subterráneos sin la luz de día, con tal de que haya un poco de tierra, bastante espacio y que estén bien alumbrados por antorchas.
+        Comienza siempre por poner una antorcha a cada lado del retoño recientemente plantado.</li>
+        <li>Si no quieres esperar el fin de la noche, fabrica una cama, podrás dormir dentro y te despertarás inmediatamente al amanecer. Una cama se construye con 3
+        bloques de lana (de carneros) encima de 3 bloques de tablas de madera.</li>
+        <li>Si estás en una cueva y una parte del techo es arena, no des el menor golpe de pala dentro , esto hará que todo el techo se hunda y mueras asfixiado en la
+        arena.</li>
+        <li>Jamás construyas tu casa de madera. En caso de fuego (por ejemplo un zombi en llamas) puede prender fuego en tu casa entera y perderás tus bienes (incluido tus
+        cofres). Constrúyela siempre de piedra <i>(cobblestone)</i>.</li>
+        <img id="im" src="https://i.ytimg.com/vi/R1jX1BVlVSk/maxresdefault.jpg">
+        <li>Los monstruos aparecen en lugares poco iluminados; por lo tanto piensa en iluminar bien con antorchas. Cuanto más profundo estés en el subsuelo, más tolerantes
+        son los monstruos a la luz, por lo tanto hay que iluminar con más antorchas o acercarlas más.</li>
+        <li>El día dura 10 minutos, la noche también.</li>
+        <li>No trates de recuperar oro u otros metales preciosos con un pico de roca o de madera ya que una vez roto, el bloque no te dará nada. Para eso, debes romper el
+        bloque por lo menos con un pico de hierro.</li>
+      </ul>
+      <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/140308104&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+      <h2 id="can">Canales recomendados</h2>
+      <p>Recomiendo sobre todo a ElRichMC. Aquí un poco de información sobre él:</p>
+      <p><i>«ElRichMC»</i> es un Youtuber español de La Coruña, Galicia que actualmente cuenta con más de 1.280.000 de suscriptores en su canal. Se puede decir que <i>ElRichMC</i> es uno de los muchos jugadores técnicos que existen y fue el que propagó el <u>Minecraft Técnico</u>
+      a los jugadores de habla hispana. Fue el único Español en formar parte del servidor de survival técnico <u>Zipkrowd</u> con gente de varios países. Durante 2 meses y 27 días Rich se encontró inactivo por falta de motivación, esto ocurrió entre el 2 de Mayo y
+      el 29 de Julio del 2015. Creó su canal el 17/03/12 y subió su primer vídeo el 18/03/12. Su vídeo más famoso es:</p>
+      <div class="videoBox">
+        <iframe src="https://www.youtube.com/embed/Ti7JRF4lT_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p>También le han hecho parodias musicales, como esta <u>(letra abajo)</u>:</p>
+      <div class="videoBox">
+        <iframe src="https://www.youtube.com/embed/z-ETfCgAt5Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="song">
+        <p>Aquí ElRichMC, otra vez.</p>
+        <p>Con mi talento para el técnico , CTM's y PVP.</p>
+        <p>No te sorprendas si este menda es el gamer del mes. </p>
+        <p>Para pararme no cuentes , con que tenga un mal PC.</p>
+        <p>Jugador profesional, cuando juego soy el rey </p>
+        <p>Ya temedme soy el jefe del ... HEY HEY HEY </p>
+        <p>Maestro de las EnderPearls</p>
+        <p>Si me veis en PVP tened presente que pronto pereceréis</p>
+        <p>En el CAMPO DE BATALLA  con un WaterDrop </p>
+        <p>Aterrizo en tu jeta como todo un dios </p>
+        <p>Soy como todo un alud de coraje y actitud</p>
+        <p>En la Biblia hay un nuevo pasaje lo mio con C.U.B.E , ! HA ! </p>
+        <p>Crear una LavaTrench en Survival es la formula única</p>
+        <p>que tenéis vosotros para comprender:</p>
+        <p>que soy el resultado de mezclar a todo Angry Lambs ,</p>
+        <p>ZipKrowd, Killer , Tonacho y tambien TangoTek.</p>
+        <p>Gane UHC 2 veces , empecé con un Mierdi-PC pero el arbol siempre crece</p>
+        <p>Ni mis bajos FPS fueron suficientes para ralentizar el destino prospero del gamer</p>
+        <p>Que se convirtió en leyenda tras gastar tantas narices con pimientos ,Rich Cola Y una Mente Paciente</p>
+        <p>No veas ni un capitulo de Survival, pues mutara en la única manera que tendrás de entretenerte.</p>
+        <p>Voy andando por mi mundo de Minecraft... , sin nada que hacer , Eh Eh </p>
+        <p>Buenos CTM's ; Simulation Protocol O RageCraft</p>
+        <p>O insanos complicados como aquel de la niebla </p>
+        <p>!C.U.B.E no fue nada para mi ! , Si , y se que con Vechs no voy a morir , mi</p>
+        <p>Talento te hará confundir , No podrás impedir , ! No podrás impedir ! </p>
+        <p>Estas ganas increíbles de sentirme indestructible ,</p>
+        <p>Dame solo un Power 1 y sentirás que son misiles </p>
+        <p>Te crees mejor que yo ? , mejor que asimiles que no hay ni siquiera </p>
+        <p>Un dios que trate de predecirme</p>
+        <p>Este domingo hay survival ? </p>
+        <p>Subirás el mapa ? </p>
+        <p>Para cuando PVP ? </p>
+        <p>Cuando enseñaras tu cara ?</p>
+        <p>Lo siento , pues el silencio es mi mayor talento , </p>
+        <p>Siente HYPE, la impaciencia y disfruta del momento</p>
+        <p>Voy andando por mi mundo de minecraft... , Sin nada que hacer , Eh Eh</p>
+        <p>Buenos CTM's ; Simulation Protocol O RageCraft</p>
+        <p>O insanos complicados como aquel de la niebla </p>
+        <p>!C.U.B.E no fue nada para mi ! , Si , y se que con Vechs no voy a morir , mi</p>
+        <p>Talento te hará confundir , No podrás impedir , ! No podrás impedir ! </p>
+        <p>Que me convierta en el mejor jugador de minecraft ,</p>
+        <p>Que consiga el 100% de Leyendas del Rayman </p>
+        <p>Ser mas rápido que Sonic , a base de "meta" y crack </p>
+        <p>U otro personaje en BroForce con el que pelear </p>
+        <p>Un MEGA perro y que seamos ambos tal para cual ,</p>
+        <p>Que 21.000 de hierro a la hora pueda alcanzar </p>
+        <p>Que me acompañe Sinesita , ella influye en la calidad </p>
+        <p>Y que Santi y sus intros no paren de amenizar</p>
+      </div>
+      <p>Además de ElRichMC, Alexelcapo es también un buen youtuber de Minecraft:</p>
+      <p>Alexelcapo <i>(Alex, Alejandro, EvilAFM)</i> es un youtuber de Mallorca que sube vídeos relacionados con el mundo de los videojuegos, realizando gameplays comentados de los mismos. Cuenta actualmente con 1.640.000 suscriptores en su canal de YouTube y con
+      más de 4.900 vídeos. Su contenido abarca gameplays comentados de toda la variedad de juegos, sobre todo famosos, aunque sea más identificado por subir contenido del juego <b>Minecraft</b>. Este es el banner de su canal:</p>
+      <img src="https://1.bp.blogspot.com/-x3zybzMaE3o/XmDiqGJbBFI/AAAAAAAADMA/hQa3TMDhgQ0SZX14rc8jSnXlY8lOxfxvQCLcBGAsYHQ/s640/channels4_banner.jpg">
+      <iframe width="900" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/338868237&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    </div>
+    <div class="leftBar">
+      <h2>Vídeos de Interes</h2>
+      <h3>Tutorial Básico:</h3>
+      <div class="videoBox">
+        <iframe width="313" height="315" src="https://www.youtube.com/embed/rgaxzBZoMsY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>Consejos:</h3>
+      <div class="videoBox">
+        <iframe width="313" height="315" src="https://www.youtube.com/embed/AnmHpoXJ3I8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>Curiosidades:</h3>
+      <div class="videoBox">
+        <iframe width="313" height="315" src="https://www.youtube.com/embed/HxAOPfIdKjw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="bot">
+      <h3>Ghippax @2020</h3>
+      <a target="_blank" href="https://github.com/Ghippax">Github</a>      
+    </div>
+  </body>
+</html>
